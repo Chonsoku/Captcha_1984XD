@@ -9,14 +9,12 @@ def shutdown_computer():
     if os_name == "Windows":
         os.system("shutdown /s /t 1")
     elif os_name == "Linux":
-        # Проверка на Android через присутствие переменной ANDROID_ROOT
         if "ANDROID_ROOT" in os.environ:
-            # Команда выключения для Android (требуются root-права)
             os.system("reboot -p")
         else:
             os.system("shutdown -h now")
     else:
-        print("Блять. Если у тебя мак или другая система - иди нахуй(")
+        print("Блять. Если у тебя мак или другая юникс подобная фигня - иди нахуй(")
 
 
 while True:
