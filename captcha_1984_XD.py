@@ -2,6 +2,8 @@ import os
 import time
 import platform
 
+counter = 0
+
 def shutdown_computer():
     os_name = platform.system()
     if os_name == "Windows":
