@@ -3,14 +3,19 @@ import time
 import platform
 
 counter = 0
+
 def shutdown_computer():
     os_name = platform.system()
     if os_name == "Windows":
         os.system("shutdown /s /t 1")
     elif os_name == "Linux":
-        os.system("shutdown -h now")
+        if "ANDROID_ROOT" in os.environ:
+            os.system("reboot -p")
+        else:
+            os.system("shutdown -h now")
     else:
-        print("Блять. Если у тебя мак, или какая-то другая юникс-подобная шмаль - то иди нахуй(")
+        print("Блять. Если у тебя мак или другая юникс подобная фигня - иди нахуй(")
+
 
 while True:
     print("Введи капчу - | 1984 |")
